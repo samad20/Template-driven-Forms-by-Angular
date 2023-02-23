@@ -41,6 +41,21 @@
       ></textarea>
     </div>
 
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="flexCheckDefault"
+        ngModel
+        name="isSubscribed"
+      />
+      <label class="form-check-label" for="flexCheckDefault">
+        Subscribe to mail list
+      </label>
+    </div>
+
+    <p>{{ f.value | json }}</p>
+
     <button type="button" class="btn btn-primary" [disabled]="!f.valid">
       Submit
     </button>
