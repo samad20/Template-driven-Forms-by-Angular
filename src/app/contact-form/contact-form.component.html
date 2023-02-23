@@ -53,13 +53,13 @@
         Subscribe to mail list
       </label>
     </div>
-    <div class="mb-3">
+    <div>
       <label for="contactMethod">Contact Method</label>
       <select
         ngModel
         name="contactMethod"
         id="contactMethod"
-        class="form-select"
+        class="form-select mb-3"
         aria-label="Default select example"
       >
         <option></option>
@@ -68,6 +68,22 @@
           {{ contact.name }}
         </option>
       </select>
+    </div>
+
+    <div>
+      <div class="form-check" *ngFor="let contact of contactMethods">
+        <input
+          ngModel
+          class="form-check-input"
+          type="radio"
+          name="contactMethod"
+          id="contactMethod"
+          [value]="contact.id"
+        />
+        <label class="form-check-label" for="contactMethod">
+          {{ contact.name }}
+        </label>
+      </div>
     </div>
     <p>{{ f.value | json }}</p>
 
