@@ -53,7 +53,22 @@
         Subscribe to mail list
       </label>
     </div>
-
+    <div class="mb-3">
+      <label for="contactMethod">Contact Method</label>
+      <select
+        ngModel
+        name="contactMethod"
+        id="contactMethod"
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option></option>
+        <!-- [ngValue]="contact" -->
+        <option *ngFor="let contact of contactMethods" [value]="contact.id">
+          {{ contact.name }}
+        </option>
+      </select>
+    </div>
     <p>{{ f.value | json }}</p>
 
     <button type="button" class="btn btn-primary" [disabled]="!f.valid">
